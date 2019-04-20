@@ -9,17 +9,17 @@
   
   
   
-  <meta name="description" content="About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
+  <meta name="description" content="Photo by Alex Knight on Unsplash About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About">
 <meta property="og:url" content="https://savepointlog.github.io/about/index.html">
 <meta property="og:site_name" content="Savepoint">
-<meta property="og:description" content="About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
+<meta property="og:description" content="Photo by Alex Knight on Unsplash About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2016-12-10T12:23:16.506Z">
+<meta property="og:updated_time" content="2018-08-13T12:15:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
-<meta name="twitter:description" content="About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
+<meta name="twitter:description" content="Photo by Alex Knight on Unsplash About Me刀背击打，混乱中立。萌、雷点都很拧巴，腿肉看心情割。">
   
     <link rel="alternate" href="/atom.xml" title="Savepoint" type="application/atom+xml">
   
@@ -60,8 +60,19 @@
   
     <link rel="stylesheet" href="/css/archive.css" >
   
+
   
-  
+
+  <script>
+    (function () {
+      if ('{{ page.password }}') {
+        if (prompt('请输入文章密码') !== '{{ page.password }}') {
+          alert('密码错误！');
+          history.back();
+        }
+      }
+    })();
+  </script>
 
 </head>
 
@@ -165,7 +176,7 @@
               
                 <div class="item active" style="max-height:600px; overflow: hidden;">
               
-                <img id="carousel-img0" src="/css/images/pose.jpg">
+                <img id="carousel-img0" src="https://source.unsplash.com/collection/954550/1920x1080">
               </div>
 
               <!-- 自适应大图 -->
@@ -181,56 +192,6 @@
 	                    } else {
 	                      imageTag0.style.height = h + "px";
 	                      imageTag0.style.marginLeft = -(h * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-	                    }
-	                  };
-              	  };
-                  carouselResize();
-              </script>
-            
-              
-                <div class="item" style="max-height:600px; overflow: hidden;">
-              
-                <img id="carousel-img1" src="/css/images/sample.jpg">
-              </div>
-
-              <!-- 自适应大图 -->
-              <script>
-              	  var carouselResize = function() {
-              	  	  var h = document.body.clientHeight / 3;
-	                  var img1 = new Image();
-	                  var imageTag1 = document.getElementById("carousel-img1");
-	                  img1.src = imageTag1.src;
-	                  img1.onload=function(){
-	                    if (img1.width / img1.height <= document.body.clientWidth / h) {
-	                      imageTag1.style.width = document.body.clientWidth + "px";
-	                    } else {
-	                      imageTag1.style.height = h + "px";
-	                      imageTag1.style.marginLeft = -(h * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-	                    }
-	                  };
-              	  };
-                  carouselResize();
-              </script>
-            
-              
-                <div class="item" style="max-height:600px; overflow: hidden;">
-              
-                <img id="carousel-img2" src="https://source.unsplash.com/collection/954550/1920x1080">
-              </div>
-
-              <!-- 自适应大图 -->
-              <script>
-              	  var carouselResize = function() {
-              	  	  var h = document.body.clientHeight / 3;
-	                  var img2 = new Image();
-	                  var imageTag2 = document.getElementById("carousel-img2");
-	                  img2.src = imageTag2.src;
-	                  img2.onload=function(){
-	                    if (img2.width / img2.height <= document.body.clientWidth / h) {
-	                      imageTag2.style.width = document.body.clientWidth + "px";
-	                    } else {
-	                      imageTag2.style.height = h + "px";
-	                      imageTag2.style.marginLeft = -(h * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
 	                    }
 	                  };
               	  };
@@ -280,7 +241,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h3><p>刀背击打，混乱中立。<br>萌、雷点都很拧巴，腿肉看心情割。</p>
+        <p>Photo by <a href="https://unsplash.com/photos/-4pZ_YqcSFc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Alex Knight</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></p>
+<h3 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h3><p>刀背击打，混乱中立。<br>萌、雷点都很拧巴，腿肉看心情割。</p>
 
       
     </div>
@@ -309,7 +271,7 @@
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2018 - 2018 Savepoint All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 Savepoint All Rights Reserved.</p>
 	      
 	      
   		   	<p id="copyRightCn">Savepoint hold copyright</p>
@@ -450,7 +412,7 @@
             Savepoint
           </div>
           <div class="panel-body">
-            Copyright © 2018 Savepoint All Rights Reserved.
+            Copyright © 2019 Savepoint All Rights Reserved.
           </div>
         </div>
       </div>

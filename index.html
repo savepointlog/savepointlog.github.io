@@ -55,8 +55,19 @@
   
 
   
+
   
-  
+
+  <script>
+    (function () {
+      if ('{{ page.password }}') {
+        if (prompt('请输入文章密码') !== '{{ page.password }}') {
+          alert('密码错误！');
+          history.back();
+        }
+      }
+    })();
+  </script>
 
 </head>
 
@@ -189,7 +200,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-QNA"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -197,7 +208,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/posts/default/hello-world/">Hello World</a>
+      <a class="article-title" href="/posts/savepoint/QNA/">《存档点》 Q&amp;A</a>
     </h1>
   
 
@@ -205,21 +216,78 @@
     
     <div class="article-meta">
       
-	<a href="/posts/default/hello-world/" class="article-date">
-	  <time datetime="2018-08-13T05:37:03.947Z" itemprop="datePublished">2018-08-13</time>
+	<a href="/posts/savepoint/QNA/" class="article-date">
+	  <time datetime="2018-08-14T01:55:00.000Z" itemprop="datePublished">2018-08-14</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/savepoint/">存档点</a>
+
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post...
+          《存档点》 Q&amp;A关于《存档点》的问题及解答，持续更新中。
+Q: 什么是《存档点》？A: 一个由 ChoiceScript 制作的文字游戏。
+Q: 为什么要起名叫《存档点》？A: 毕竟是RPG背景，叫这个很应景！
+Q: 不同的阵营（守序、中立、混乱）意味着什么？A: 虽然看起来只是选择主角阵营，但其实该选项代表了三条完全不同的游戏线路：守序线路，主角是冒险者；中立线路，主角是友方NPC；混乱线路，主角是恶魔城的守关小BOSS。
+三条线路的情节发展、世界设定、可攻略角色均不相同，除了...
         </p>
         <p class="article-more-link">
-          <a href="/posts/default/hello-world/#more">Read More</a>
+          <a href="/posts/savepoint/QNA/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-introduction_to_choicescript"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/posts/Choicescript-官方文档/introduction_to_choicescript/">ChoiceScript 简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/posts/Choicescript-官方文档/introduction_to_choicescript/" class="article-date">
+	  <time datetime="2018-08-14T01:55:00.000Z" itemprop="datePublished">2018-08-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Choicescript-官方文档/">Choicescript 官方文档</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          ChoiceScript 简介对程序设计语言 ChoiceScript 的基本指南。如果对该文档有疑问，请在 ChoiceScript google group 提出。
+ChoiceScript 是什么？ChoiceScript 是一个简单的程序设计语言，用于制作像 Choice of the Dragon 这样的选择类游戏。用 ChoiceScript 写游戏轻松又有趣，即使对于没有编程经验的人来说，也同样如此。
+试一把首先， 从 GitHub 下载 ChoiceScript 的源文件，...
+        </p>
+        <p class="article-more-link">
+          <a href="/posts/Choicescript-官方文档/introduction_to_choicescript/#more">Read More</a>
         </p>
       
     </div>
@@ -252,7 +320,7 @@ Quick StartCreate a new post1$ hexo new "My New Post...
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2018 - 2018 Savepoint All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 Savepoint All Rights Reserved.</p>
 	      
 	      
   		   	<p id="copyRightCn">Savepoint hold copyright</p>
@@ -395,7 +463,7 @@ Quick StartCreate a new post1$ hexo new "My New Post...
             Savepoint
           </div>
           <div class="panel-body">
-            Copyright © 2018 Savepoint All Rights Reserved.
+            Copyright © 2019 Savepoint All Rights Reserved.
           </div>
         </div>
       </div>

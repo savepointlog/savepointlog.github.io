@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>choicescript 简介 | Savepoint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="ChoiceScript翻译" />
+  
+  
+  
+  
+  <meta name="description" content="ChoiceScript 简介对程序设计语言 ChoiceScript 的基本指南。如果对该文档有疑问，请在 ChoiceScript google group 提出。 ChoiceScript 是什么？ChoiceScript 是一个简单的程序设计语言，用于制作像 Choice of the Dragon 这样的选择类游戏。用 ChoiceScript 写游戏轻松又有趣，即使对于没有编程经验的人">
+<meta name="keywords" content="ChoiceScript,翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChoiceScript 简介">
+<meta property="og:url" content="https://savepointlog.github.io/posts/Choicescript-官方文档/introduction_to_choicescript/index.html">
+<meta property="og:site_name" content="Savepoint">
+<meta property="og:description" content="ChoiceScript 简介对程序设计语言 ChoiceScript 的基本指南。如果对该文档有疑问，请在 ChoiceScript google group 提出。 ChoiceScript 是什么？ChoiceScript 是一个简单的程序设计语言，用于制作像 Choice of the Dragon 这样的选择类游戏。用 ChoiceScript 写游戏轻松又有趣，即使对于没有编程经验的人">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-24T05:06:07.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ChoiceScript 简介">
+<meta name="twitter:description" content="ChoiceScript 简介对程序设计语言 ChoiceScript 的基本指南。如果对该文档有疑问，请在 ChoiceScript google group 提出。 ChoiceScript 是什么？ChoiceScript 是一个简单的程序设计语言，用于制作像 Choice of the Dragon 这样的选择类游戏。用 ChoiceScript 写游戏轻松又有趣，即使对于没有编程经验的人">
+  
+    <link rel="alternate" href="/atom.xml" title="Savepoint" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/basic_diamonds.png">
+  <link rel="apple-touch-icon" href="/css/images/basic_diamonds.png">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+
+  
+
+  <script>
+    (function () {
+      if ('{{ page.password }}') {
+        if (prompt('请输入文章密码') !== '{{ page.password }}') {
+          alert('密码错误！');
+          history.back();
+        }
+      }
+    })();
+  </script>
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="64px" height="64px" alt="Hike News" src="/css/images/basic_diamonds.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-introduction_to_choicescript" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      ChoiceScript 简介
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/posts/Choicescript-官方文档/introduction_to_choicescript/" class="article-date">
+	  <time datetime="2018-08-14T01:55:00.000Z" itemprop="datePublished">2018-08-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Choicescript-官方文档/">Choicescript 官方文档</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ChoiceScript-简介"><a href="#ChoiceScript-简介" class="headerlink" title="ChoiceScript 简介"></a>ChoiceScript 简介</h1><p>对程序设计语言 ChoiceScript 的基本指南。如果对该文档有疑问，请在 <a href="http://groups.google.com/group/choicescript" target="_blank" rel="noopener">ChoiceScript google group</a> 提出。</p>
+<h2 id="ChoiceScript-是什么？"><a href="#ChoiceScript-是什么？" class="headerlink" title="ChoiceScript 是什么？"></a>ChoiceScript 是什么？</h2><p>ChoiceScript 是一个简单的程序设计语言，用于制作像 <a href="http://www.choiceofgames.com/dragon/" target="_blank" rel="noopener">Choice of the Dragon</a> 这样的选择类游戏。用 ChoiceScript 写游戏轻松又有趣，即使对于没有编程经验的人来说，也同样如此。</p>
+<h2 id="试一把"><a href="#试一把" class="headerlink" title="试一把"></a>试一把</h2><p>首先， <a href="http://github.com/dfabulich/choicescript/zipball/master" target="_blank" rel="noopener">从 GitHub 下载 ChoiceScript 的源文件</a>，将 zip 文件解压缩，打开 <code>web/index.html</code>，游戏立刻就开始运行了。</p>
+<p>（你也可以在 <a href="http://github.com/dfabulich/choicescript" target="_blank" rel="noopener">ChoiceScript github page</a> 浏览我们的文件和文件 bug ，或者在我们更新 ChoiceScript 时收到通知。）</p>
+<h2 id="你的第一幕：-choice-和-finish"><a href="#你的第一幕：-choice-和-finish" class="headerlink" title="你的第一幕： *choice  和  *finish"></a>你的第一幕： <code>*choice</code>  和  <code>*finish</code></h2><p>这是用 ChoiceScript 写出的简单的一幕。你可以在 <code>web/mygame/startup.txt</code> 中查看。</p>
+<p> `陛下，您的子民饥肠辘辘、流落街头，嚷着要造反。您盘踞西方的敌人虽然力量不足为惧，但也威胁要在不久后进攻。您打算怎么做呢？</p>
+<p>  *choice</p>
+<pre><code>#先发制人，对西方发动战争。
+  您如果能占据他们的土地，国家就能繁荣昌盛。但您的军队士气低迷，王国军械也供给不足。怎么才能赢得战争呢？
+  *choice
+    #像驱使奴隶一样驱使农民。只要他们足够拼命，我们就能取得胜利。
+      不幸的是，这样不会对士气有任何助益。您的军队很快叛变，王国也落到西方的野蛮人手中。
+      *finish
+    #封给有领导魅力的骑士土地、人民和物资。
+      您的子民足智多谋。骑士们赢得了战争，
+      但请您小心：他们可能很快就会要求组建议会了。
+      *finish
+    #在夜深人静时偷走敌人的食物和武器。
+      真是个狡猾的计划。很快您的军队就与西方人势均力敌了。他们目前放弃了侵略，但这是必然发生之事，您再怎么拖延，能拖延到什么时候呢？
+      *finish
+#Beat swords to plowshares and trade food to the westerners for protection.
+  The westerners have you at the point of a sword.  They demand unfair terms
+  from you.
+  *choice
+    #Accept the terms for now.
+      Eventually, the barbarian westerners conquer you anyway, destroying their
+      bread basket, and the entire region starves.
+      *finish
+    #Threaten to salt our fields if they don&apos;t offer better terms.
+      They blink.  Your majesty gets a fair price for wheat.
+      *finish
+#Abdicate the throne. I have clearly mismanaged this kingdom!
+  The kingdom descends into chaos, but you manage to escape with your own hide.
+  Perhaps in time you can return to restore order to this fair land.
+  *finish`
+</code></pre><p>As you can see, the <code>*choice</code> command presents the user with a list of options; the result of choosing each option appears indented right below the option (in an “indented block”).</p>
+<p>If you go to play this scene, you’ll first be presented with three options:</p>
+<ol>
+<li>Make pre-emptive war on the western lands.</li>
+<li>Beat swords to plowshares and trade food to the westerners for protection.</li>
+<li>Abdicate the throne. I have clearly mismanaged this kingdom!</li>
+</ol>
+<p>If you choose option #1, you get to choose how to win the war. If you choose option #2, you may decide how to negotiate with the westerners. If you choose option #3, the scene ends with no additional choices.</p>
+<p>As you can see, there’s a lot you can do with just the <code>*choice</code> command and the <code>*finish</code> command. Indeed, using only these two commands and a lot of time, you could develop an entire “Choose Your Own Adventure” book!</p>
+<h2 id="Go-On-Play-with-It"><a href="#Go-On-Play-with-It" class="headerlink" title="Go On, Play with It!"></a>Go On, Play with It!</h2><p>Try opening up <code>web/mygame/startup.txt</code> in a simple text editor like Notepad or TextEdit. If you change the text, save the file, and refresh the <code>web/mygame/index.html</code> page in your browser, you should be able to see the effect of your changes immediately.</p>
+<h2 id="Indentation"><a href="#Indentation" class="headerlink" title="Indentation"></a>Indentation</h2><p>Note that indentation in ChoiceScript is mandatory. Without those spaces for indentation, we would have no way to tell the difference between options nested within other choices and options on the main menu. You can indent blocks using spaces or with the Tab character (but not both in the same file). You can use any number of spaces you want, but you must be consistent. Code like this is not allowed:`</p>
+<p>*choice</p>
+<pre><code>#Hold &apos;em.
+    He calls; you win!
+    *finish
+  #Fold &apos;em.
+    Better luck next time.
+    *finish
+</code></pre><p>`Option 1 has four spaces, but Option 2 has six spaces; since these don’t line up, ChoiceScript will display an error message if you try to write scenes like this.</p>
+<h2 id="Reusing-Code-Goto-and-Label"><a href="#Reusing-Code-Goto-and-Label" class="headerlink" title="Reusing Code: Goto and Label"></a>Reusing Code: Goto and Label</h2><p>ChoiceScript provides a way to jump around in a scene besides just making choices. You can use the <code>*goto</code> command to jump to any line in the scene, as long as you first put a <code>*label</code> on the line you want to reach.</p>
+<p> `What kind of animal will you be?<br>  *choice</p>
+<pre><code>#Lion
+  *goto claws
+#Tiger
+  *label claws
+  In that case, you&apos;ll have powerful claws and a mighty roar!
+  *finish
+#Elephant
+  Well, elephants are interesting animals, too.
+  *finish`
+</code></pre><p>When we reach the line <code>*goto claws</code>, we automatically jump to the line <code>*label claws</code>. You may create as many labels as you like, and use <code>*goto</code> to reach any of them.</p>
+<p>Note that every indented (nested) block must conclude with either a <code>*finish</code> command (which ends the scene) or a <code>*goto</code> line which jumps to another line in the scene.</p>
+<p>(You can also reuse code with the <code>*goto_scene</code> command, described later in this document.)</p>
+<h2 id="Setting-and-Checking-Variables"><a href="#Setting-and-Checking-Variables" class="headerlink" title="Setting and Checking Variables"></a>Setting and Checking Variables</h2><p>In ChoiceScript, you can use variables to make scenes and decisions more interesting than a “Choose Your Own Adventure” book.</p>
+<p>To use a variable, you must begin by defining it and setting it, like this:</p>
+<p> <code>*temp leadership
+  *set leadership 20</code></p>
+<p><strong>TODO: Discuss <code>*create</code> vs. <code>*temp</code>.</strong> We will probably remove the <code>*create</code> command in the future, replacing it with something in <code>mygame.js</code>; we should document what the new thing will be. (The basic idea is that <code>*temp</code> variables only last for the current scene, whereas permanent variables persist through the entire game.)</p>
+<p>Once a variable has been set, you can check the value of the variable like this:</p>
+<p> <code>#Run for class president
+    *if leadership &gt; 15
+      You win the election.
+      *finish
+    You lose the election.
+    *finish</code></p>
+<p>In this case, leadership is just set to 20, so the player is sure to win the election. But you can choose to give the player a different amount of leadership depending on the player’s earlier choices. Using variables, the player’s earlier leadership choices can have an effect on the story later in the game.</p>
+<p>You can also add leadership points to the current number of leadership points, like this:</p>
+<p> <code>*set leadership +20</code></p>
+<p>This would add 20 points to the player’s current leadership score. It’s the same thing as writing <code>*set leadership leadership+20</code>. You can also subtract points with “-“, multiply with “*” or divide with “/“.</p>
+<p>If you need to use multiple operators at once (e.g. you need to do both division and addition), you must use parentheses, like this: <code>*set honesty (leadership + manners)*2</code>. You may not omit the paretheses, even though it’s perfectly understandable arithmetic: <code>*set honesty leadership + manners / 2</code>.</p>
+<p>You can also show the player’s current leadership score by using <code>${}</code> (a dollar sign followed by curly braces), like this:</p>
+<p> <code>Your leadership score is: ${leadership}</code></p>
+<p>By the way, variables aren’t just for numbers. You can also put text in a variable by using quotation marks:</p>
+<p> <code>*set lover_name &quot;Jamie&quot;</code></p>
+<h3 id="Using-else-and-elseif-to-Improve-Readability"><a href="#Using-else-and-elseif-to-Improve-Readability" class="headerlink" title="Using *else and *elseif to Improve Readability"></a>Using <code>*else</code> and <code>*elseif</code> to Improve Readability</h3><p>We can rewrite the leadership example above to use the <code>*else</code> command; this will make it easier to read.</p>
+<p> <code>#Run for class president
+    *if leadership &gt; 15
+      You win the election.
+      *finish
+    *else
+      You lose the election.
+      *finish</code></p>
+<p>This does exactly the same thing as before, but using <code>*else</code> makes it clearer that only one of these two options is possible, just by indenting the code.</p>
+<p>You can also use the <code>*elseif</code> command to define three possible branches, like this:</p>
+<p> <code>#Run for class president
+    *if leadership &gt; 25
+      You win the election by a landslide!
+      *finish
+    *elseif leadership &gt; 15
+      You win the election, but just barely.
+      *finish
+    *else
+      You lose the election.
+      *finish</code></p>
+<h2 id="What-Happens-When-We-finish"><a href="#What-Happens-When-We-finish" class="headerlink" title="What Happens When We *finish?"></a>What Happens When We <code>*finish</code>?</h2><p>When we <code>*finish</code>, we move on to the next scene in the game. This is defined in a file called <code>mygame.js</code>. Here’s an example:</p>
+<pre><code>// Specify the list of scenes here, separated by commas, with no final comma
+
+nav = new SceneNavigator([
+    &quot;startup&quot;
+    ,&quot;animal&quot;
+    ,&quot;variables&quot;
+    ,&quot;ending&quot;
+    ,&quot;death&quot;
+
+]);
+
+// Specify the default starting stats here
+
+stats = {
+    leadership: 50
+    ,strength: 50
+};
+
+// Specify the stats to use in debug mode
+
+debugStats = {
+    leadership: 50
+    ,strength: 50
+};
+
+// or just use defaults
+// debugStats = stats
+</code></pre><p>The first section defines the scene “navigator,” which describes how we move from scene to scene. If you <code>*finish</code> in the “startup” scene, we’ll move right ahead to the “animal” scene, then the “variables” scene. Finally, we reach the ending scene. Here’s an example ending scene:</p>
+<pre><code>This is the last scene!  The game is over!
+
+*ending
+</code></pre><p>That final <code>*ending</code> command instructs the game to insert a “Play Again” button at the end of the scene. If you choose to “Play Again”, the game will begin again at the “startup” scene.</p>
+<p><strong>WARNING</strong>: mygame.js is likely to change considerably very soon. It’s currently the absolute minimum amount of code that could possibly work; we’d like it to be in a nicer format that looks more like ChoiceScript and less like JavaScript.</p>
+<p>(Note that Choice of the Dragon doesn’t even have a <code>mygame.js</code> file; that feature was developed after CotD was released. You can see something similar in its <code>index.html</code> file.)</p>
+<p>You’re not required to use <code>*finish</code> to move on to the next scene; you can also jump to any scene in the game using <code>*goto_scene</code>. Here’s an example:</p>
+<pre><code>#Lift weights
+  *if strength &gt; 15
+    You lift the weights.
+    *finish
+  You drop the weights and hurt yourself badly.  You never recover.
+
+  *goto_scene death
+</code></pre><p>When this happens, we jump directly to the death scene. This allows you to provide a standard “death” message without copying and pasting all over the game.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Here some example scenes from Choice of the Dragon. Please don’t copy their code without explicit permission from Choice of Games.</p>
+<ul>
+<li><a href="http://www.choiceofgames.com/dragon/scenes/startup.txt" target="_blank" rel="noopener">startup</a><br><a href="http://www.choiceofgames.com/dragon/scenes/startup.txt" target="_blank" rel="noopener"></a>*   <a href="http://www.choiceofgames.com/dragon/scenes/startup.txt" target="_blank" rel="noopener"></a><a href="http://www.choiceofgames.com/dragon/scenes/queenpolitics.txt" target="_blank" rel="noopener">queenpolitics</a></li>
+</ul>
+<h2 id="Next-Other-Commands-and-Tricks"><a href="#Next-Other-Commands-and-Tricks" class="headerlink" title="Next: Other Commands and Tricks"></a><a href="http://www.choiceofgames.com/blog/choicescript-advanced/" target="_blank" rel="noopener">Next: Other Commands and Tricks</a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8zODg1MS8xNTM3OQ==">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/posts/savepoint/QNA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          《存档点》 Q&amp;A
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ChoiceScript-简介"><span class="nav-number">1.</span> <span class="nav-text">ChoiceScript 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ChoiceScript-是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">ChoiceScript 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#试一把"><span class="nav-number">1.2.</span> <span class="nav-text">试一把</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你的第一幕：-choice-和-finish"><span class="nav-number">1.3.</span> <span class="nav-text">你的第一幕： *choice  和  *finish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-On-Play-with-It"><span class="nav-number">1.4.</span> <span class="nav-text">Go On, Play with It!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Indentation"><span class="nav-number">1.5.</span> <span class="nav-text">Indentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reusing-Code-Goto-and-Label"><span class="nav-number">1.6.</span> <span class="nav-text">Reusing Code: Goto and Label</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting-and-Checking-Variables"><span class="nav-number">1.7.</span> <span class="nav-text">Setting and Checking Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-else-and-elseif-to-Improve-Readability"><span class="nav-number">1.7.1.</span> <span class="nav-text">Using *else and *elseif to Improve Readability</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-Happens-When-We-finish"><span class="nav-number">1.8.</span> <span class="nav-text">What Happens When We *finish?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">1.9.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-Other-Commands-and-Tricks"><span class="nav-number">1.10.</span> <span class="nav-text">Next: Other Commands and Tricks</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 Savepoint All Rights Reserved.</p>
+	      
+	      
+  		   	<p id="copyRightCn">Savepoint hold copyright</p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Savepoint
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 Savepoint All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
